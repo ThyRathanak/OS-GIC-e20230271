@@ -1,5 +1,0 @@
-bridge.txt
-pencil.txt
-pencil_copy.txt
-task2
-task2_file.txt
