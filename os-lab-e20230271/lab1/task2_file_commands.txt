@@ -1,0 +1,7 @@
+/home/gic-thy-rathanak/oslab-work/lab1/task2_files
+cd ~/oslab-work/lab1/task2_files
+ls
+cat pencil.txt
+mv bridge.txt bridge_renamed.txt
+cp pencil.txt pencil_copy.txt
+ls -l
