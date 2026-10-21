@@ -80,11 +80,11 @@ fopen() opens the file for writing, creates it if it does not exist, and truncat
 
 1. **What does `read()` return? How is this different from `fgets()`?**
 
-  `read()` returns the number of bytes actually read. It returns 0 at the end of the file and -1 if an error occurs. fgets() returns a pointer to the buffer when it successfully reads a line or part of a line, and returns NULL when it reaches the end of the file without reading more data or when an error occurs.
+`read()` returns the number of bytes actually read. It returns 0 at the end of the file and -1 if an error occurs. fgets() returns a pointer to the buffer when it successfully reads a line or part of a line, and returns NULL when it reaches the end of the file without reading more data or when an error occurs.
 
 2. **Why do you need a loop when using `read()`? When does it stop?**
 
-  A loop is needed because one call to `read()` may not read the entire file. The loop continues reading and displaying data until `read()` returns 0, indicating the end of the file. If read() returns -1, an error has occurred.
+A loop is needed because one call to `read()` may not read the entire file. The loop continues reading and displaying data until `read()` returns 0, indicating the end of the file. If read() returns -1, an error has occurred.
 
 ---
 
@@ -179,19 +179,30 @@ Screenshot of running on Windows:
 
 1. **How many system calls does the library version make compared to the system call version?**
 
-   > [Your answer — use the `strace -c` counts]
+According to my strace -c results:
+Library version (file_creator_lib): [insert total calls]
+System-call version (file_creator_sys): [insert total calls]
+The counts may differ because the library version and the system-call version can perform different operations during program startup and execution.
 
 2. **What extra system calls appear in the library version? What do they do?**
 
-   > [Your answer — mention `brk`, `mmap`, `fstat`, etc.]
+Depending on my trace, extra system calls may include:
+brk(): Adjusts the program's heap memory.
+mmap(): Maps memory into the process's address space, often for shared libraries or memory allocation.
+fstat() or newfstatat(): Retrieves file metadata.
+access() or faccessat(): Checks file accessibility.
+Not every program or Linux environment will show all these calls. Some may also appear in the system-call version.
 
 3. **How many `write()` calls does `fprintf()` actually produce?**
 
-   > [Your answer]
+In my trace, I observed [insert the number of write calls related to the file output] write system call(s) for writing the file content.
+I learned that fprintf() does not necessarily call the kernel immediately. The C library may buffer the output and send it to the kernel later, such as when the buffer is flushed or the file is closed. Therefore, one fprintf() call does not necessarily correspond to one write() system call.
 
 4. **In your own words, what is the real difference between a library function and a system call?**
 
-   > [Your answer]
+A library function is provided by a programming library and runs in user space. It may format data, manage buffers, and call one or more system calls when it needs operating-system services.
+A system call is the interface through which a program requests a service from the operating system kernel, such as opening a file, reading data, or writing data.
+For example, fprintf() formats text and may buffer it, while write() requests that the kernel write bytes to a file descriptor.
 
 ---
 
