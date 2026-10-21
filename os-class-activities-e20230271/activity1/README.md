@@ -104,15 +104,19 @@ fopen() opens the file for writing, creates it if it does not exist, and truncat
 
 1. **What struct does `readdir()` return? What fields does it contain?**
 
-   > [Your answer]
+readdir() returns a pointer to a struct dirent, which describes one directory entry. Important fields include:
+d_name: The name of the file or directory.
+d_ino: The inode number.
+d_type: The entry type on systems that provide it, such as a regular file or directory. Its availability and meaning depend on the filesystem.
+readdir() returns NULL when there are no more entries or when an error occurs.
 
 2. **What information does `stat()` provide beyond file size?**
 
-   > [Your answer]
+stat() provides several details about a file, including its file type, permissions, inode number, owner ID, group ID, number of hard links, file size, and timestamps such as the last modification time and last access time.
 
 3. **Why can't you `write()` a number directly — why do you need `snprintf()` first?**
 
-   > [Your answer]
+write() writes bytes from a memory buffer. An integer is stored in binary form in memory, not as the decimal characters that people normally read. Therefore, snprintf() converts the filename and file size into formatted text in a character buffer. Then write() can output those characters to the terminal.
 
 ---
 
