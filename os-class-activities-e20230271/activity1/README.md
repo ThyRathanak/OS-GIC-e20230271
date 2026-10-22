@@ -212,19 +212,23 @@ For example, fprintf() formats text and may buffer it, while write() requests th
 
 > 📸 Screenshot of `uname -a`, `/proc/cpuinfo`, `/proc/meminfo`, `/proc/version`, `/proc/uptime`:
 
-![System Info](screenshots/task4_system_info.png)
+![System Info](screenshots/task4_system_info1.png)
+![System Info](screenshots/task4_system_info2.png)
 
 ### Process Information
 
 > 📸 Screenshot of `/proc/self/status`, `/proc/self/maps`, `ps aux`:
 
-![Process Info](screenshots/task4_process_info.png)
+![Process Info](screenshots/task4_process_info1.png)
+![Process Info](screenshots/task4_process_info2.png)
+![Process Info](screenshots/task4_process_info3.png)
 
 ### Kernel Modules
 
 > 📸 Screenshot of `lsmod` and `modinfo`:
 
-![Kernel Modules](screenshots/task4_modules.png)
+![Kernel Modules](screenshots/task4_modules1.png)
+![Kernel Modules](screenshots/task4_modules2.png)
 
 ### OS Layers Diagram
 
@@ -236,23 +240,37 @@ For example, fprintf() formats text and may buffer it, while write() requests th
 
 1. **What is `/proc`? Is it a real filesystem on disk?**
 
-   > [Your answer]
+/proc is a virtual filesystem provided by the Linux kernel. It is not an ordinary filesystem that stores its contents on disk. Instead, the kernel generates information when programs read files in /proc. It exposes information about the system, including CPU details, memory usage, running processes, and kernel information.
 
 2. **Monolithic kernel vs. microkernel — which type does Linux use?**
 
-   > [Your answer]
+A monolithic kernel provides most operating-system services, such as process management, memory management, and device drivers, within kernel space. A microkernel keeps the core kernel small and moves many services into user space.
+
+Linux uses a monolithic kernel with modular design. Many Linux drivers and features can be loaded as modules at runtime. The presence of loadable modules in lsmod demonstrates this modular design, although lsmod alone does not determine the kernel architecture.
 
 3. **What memory regions do you see in `/proc/self/maps`?**
 
-   > [Your answer]
+My memory map shows regions such as executable program mappings, shared libraries, the heap, and the stack. Some mappings may also include read-only data, writable data, anonymous memory, and special kernel-provided regions such as [vvar] or [vdso]. The exact regions depend on the process and system.
 
 4. **Break down the kernel version string from `uname -a`.**
 
-   > [Your answer]
+The uname -a output provides several pieces of system information:
+
+Kernel name: The operating-system kernel, usually Linux.
+
+Hostname: The system's network name.
+
+Kernel release: The installed kernel release number.
+
+Kernel version/build information: Additional version, build, and compilation details.
+
+Machine architecture: The hardware architecture, such as x86_64 or aarch64.
+
+Additional fields: Depending on the system, the output may include the operating-system type and hardware platform.
 
 5. **How does `/proc` show that the OS is an intermediary between programs and hardware?**
 
-   > [Your answer]
+/proc demonstrates that the kernel manages system resources and provides controlled access to system information. User programs can read files such as /proc/cpuinfo and /proc/meminfo to obtain information about the CPU and memory without directly controlling the hardware. The kernel gathers this information and exposes it through a standard interface. This illustrates how the operating system acts as an intermediary between user programs and hardware.
 
 ---
 
