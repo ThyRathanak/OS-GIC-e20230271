@@ -1,0 +1,20 @@
+  851  cd "$HOME/os-gic-e20230271"
+  852  git pull
+  853  git status
+  854  git add os-lab-e20230271/lab2
+  855  git commit -m "Lab 2"
+  856  git push
+  857  cd ~/os-gic-e20230271/os-class-activities-e20230271
+  858  pwd
+  859  ls
+  860  mkdir -p activity2/task1
+  861  cd activity2/task1
+  862  pwd
+  863  nano forkchild.c
+  864  cat forkchild.c
+  865  gcc -Wall -Wextra -o forkchild forkchild.c
+  866  ls -l forkchild
+  867  ./forkchild > result_forkchild.txt 2>&1
+  868  cat result_forkchild.txt
+  869  ./forkchild
+  870  history | tail -n 20 > command_used_forkchild.txt
