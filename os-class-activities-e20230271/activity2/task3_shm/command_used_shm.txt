@@ -1,0 +1,20 @@
+  911  cat result_forkchild.txt
+  912  cd ..
+  913  git pull
+  914  cd ~/os-gic-e20230271/os-class-activities-e20230271
+  915  cd activity2
+  916  ls
+  917  cd ..
+  918  mkdir -p activity2/task3_shm
+  919  cd activity2/task3_shm
+  920  pwd
+  921  nano shm-producer.c
+  922  nano shm-consumer.c
+  923  gcc -Wall -Wextra -o shm-producer shm-producer.c -lrt
+  924  gcc -Wall -Wextra -o shm-consumer shm-consumer.c -lrt
+  925  ls -l
+  926  ./shm-producer
+  927  ./shm-consumer > result-shm-ipc.txt 2>&1
+  928  cat result-shm-ipc.txt
+  929  ./shm-consumer
+  930  history | tail -n 20 > command_used_shm.txt

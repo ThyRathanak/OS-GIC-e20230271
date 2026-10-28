@@ -1,0 +1,20 @@
+  929  ./shm-consumer
+  930  history | tail -n 20 > command_used_shm.txt
+  931  ls -l
+  932  ./shm-producer
+  933  ./shm-consumer
+  934  cd ~/os-gic-e20230271/os-class-activities-e20230271
+  935  mkdir -p activity2/task4_mq
+  936  cd activity2/task4_mq
+  937  pwd
+  938  nano common.h
+  939  nano sender.c
+  940  nano receiver.c
+  941  gcc -Wall -Wextra -o sender sender.c -lrt
+  942  gcc -Wall -Wextra -o receiver receiver.c -lrt
+  943  ls -l
+  944  ./sender
+  945  ./receiver > result-mq-ipc.txt 2>&1
+  946  cat result-mq-ipc.txt
+  947  ./receiver
+  948  history | tail -n 20 > command_used_mq.txt
