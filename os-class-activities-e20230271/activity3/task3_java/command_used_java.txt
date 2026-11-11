@@ -1,0 +1,30 @@
+ 1015  which javac
+ 1016  find /usr/lib/jvm -maxdepth 3 -type f -name javac 2>/dev/null
+ 1017  cd ~
+ 1018  wget -O jdk25.tar.gz "https://api.adoptium.net/v3/binary/latest/25/ga/linux/x64/jdk/hotspot/normal/eclipse"
+ 1019  mkdir -p ~/java
+ 1020  tar -xzf jdk25.tar.gz -C ~/java
+ 1021  ls ~/java
+ 1022  JAVA_DIR=$(find "$HOME/java" -maxdepth 1 -type d -name 'jdk-*' | head -n 1)
+ 1023  export JAVA_HOME="$JAVA_DIR"
+ 1024  export PATH="$JAVA_HOME/bin:$PATH"
+ 1025  java -version
+ 1026  javac -version
+ 1027  echo 'export JAVA_HOME=$(find "$HOME/java" -maxdepth 1 -type d -name "jdk-*" | head -n 1)' >> ~/.bashrc
+ 1028  echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.bashrc
+ 1029  source ~/.bashrc
+ 1030  cd os-gic-e20230271/os-class-activities-e20230271/activity3/task3_java
+ 1031  javac ThreadDemo.java
+ 1032  java ThreadDemo
+ 1033  javac ThreadDemo.java
+ 1034  java ThreadDemo > result_thread_demo.txt 2>&1
+ 1035  cat result_thread_demo.txt
+ 1036  nano RunnableDemo.java
+ 1037  javac RunnableDemo.java
+ 1038  java RunnableDemo > result_runnable_demo.txt 2>&1
+ 1039  cat result_runnable_demo.txt
+ 1040  nano PoolDemo.java
+ 1041  javac PoolDemo.java
+ 1042  java PoolDemo > result_pool_demo.txt 2>&1
+ 1043  cat result_pool_demo.txt
+ 1044  history | tail -n 30 > command_used_java.txt

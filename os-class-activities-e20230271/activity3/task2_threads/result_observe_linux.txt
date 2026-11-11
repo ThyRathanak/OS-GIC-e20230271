@@ -1,0 +1,54 @@
+gic-thy+ 1984423 1984139 1984423  0    1 18:33 pts/3    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+===== PROGRAM THREADS =====
+    PID     LWP NLWP PSR STAT COMMAND
+===== KERNEL THREADS =====
+    PID    PPID PSR COMMAND
+      3       2   0 pool_workqueue_release
+      4       2   0 kworker/R-rcu_gp
+      5       2   0 kworker/R-sync_wq
+      6       2   0 kworker/R-kvfree_rcu_reclaim
+      7       2   0 kworker/R-slub_flushwq
+      8       2   0 kworker/R-netns
+     10       2   0 kworker/0:0H-kblockd
+     13       2   0 kworker/R-mm_percpu_wq
+     14       2   0 ksoftirqd/0
+     15       2   6 rcu_preempt
+     16       2   0 rcu_exp_par_gp_kthread_worker/0
+     17       2   3 rcu_exp_gp_kthread_worker
+     18       2   0 migration/0
+     19       2   0 kprobe-optimizer
+===== PROGRAM PID =====
+1984937
+===== THREAD DETAILS =====
+    PID     LWP NLWP PSR STAT COMMAND
+1984937 1984937    5   4 Sl   threads_observe
+1984937 1984939    5   6 Sl   threads_observe
+1984937 1984940    5   5 Sl   threads_observe
+1984937 1984941    5   0 Sl   threads_observe
+1984937 1984943    5   1 Sl   threads_observe
+===== PROC THREAD DIRECTORIES =====
+1984937
+1984939
+1984940
+1984941
+1984943
+===== THREAD COUNT =====
+5
+===== PROCESS STATUS =====
+Name:	threads_observe
+State:	S (sleeping)
+Threads:	5
+===== TOP THREADS =====
+top - 18:45:03 up 34 days, 19:49, 17 users,  load average: 0.51, 0.42, 0.38
+Threads:   5 total,   0 running,   5 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  0.8 sy,  0.0 ni, 86.1 id, 11.4 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7422.6 total,    372.0 free,   2925.0 used,   4851.1 buff/cache     
+MiB Swap:   4096.0 total,   3893.0 free,    203.0 used.   4497.6 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+1984937 gic-thy+  20   0   35552   2044   1912 S   0.0   0.0   0:00.00 threads+
+1984939 gic-thy+  20   0   35552   2044   1912 S   0.0   0.0   0:00.00 threads+
+1984940 gic-thy+  20   0   35552   2044   1912 S   0.0   0.0   0:00.00 threads+
+1984941 gic-thy+  20   0   35552   2044   1912 S   0.0   0.0   0:00.00 threads+
+1984943 gic-thy+  20   0   35552   2044   1912 S   0.0   0.0   0:00.00 threads+

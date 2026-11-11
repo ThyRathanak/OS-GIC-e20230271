@@ -1,0 +1,20 @@
+ 1008  ls
+ 1009  mkdir -p activity3/task1_socket
+ 1010  cd activity3/task1_socket
+ 1011  nano server.c
+ 1012  cat server.c
+ 1013  nano client.c
+ 1014  ls
+ 1015  gcc -o server server.c
+ 1016  gcc -o client client.c
+ 1017  ls
+ 1018  cd os-class-activities-e20230271/activity3/task1_socket
+ 1019  ./server
+ 1020  ./client
+ 1021  ./server > result_server.txt 2>&1 &
+ 1022  sleep 1
+ 1023  ./client > result_client.txt 2>&1
+ 1024  wait
+ 1025  cat result_server.txt result_client.txt > result_socket.txt
+ 1026  cat result_socket.txt
+ 1027  history | tail -n 20 > command_used_socket.txt
