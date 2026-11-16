@@ -1,0 +1,1 @@
+My predictions were correct. The [12] pattern matched maple1.txt and maple2.txt, while the [!1]* pattern matched maple2.txt because its next character is not 1.

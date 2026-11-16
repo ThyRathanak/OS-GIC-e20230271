@@ -1,0 +1,4 @@
+After deleting one.txt, the link count becomes 2.
+After deleting two.txt, the link count becomes 1.
+After deleting three.txt, the file has no remaining names and its data can be released.
+The data is not gone after deleting one.txt because other hard links still refer to the same inode.

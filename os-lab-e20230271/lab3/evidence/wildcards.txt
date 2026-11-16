@@ -1,0 +1,6 @@
+<notes/maple12.txt>
+<notes/maple1.txt>
+<notes/maple2.txt>
+<notes/maple1.txt>
+<notes/maple2.txt>
+<notes/*.txt>

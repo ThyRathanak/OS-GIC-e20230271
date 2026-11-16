@@ -1,0 +1,25 @@
+
+=== BEFORE RENAME ===
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple-hard.txt
+18745529 lrwxrwxrwx 1 gic-thy-rathanak gic-thy-rathanak  9 Nov 16 09:01 maple-soft.txt -> maple.txt
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple.txt
+hard: version 803
+soft: version 803
+stored target: maple.txt
+
+=== AFTER RENAME, BEFORE REPAIR ===
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple-backup.txt
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple-hard.txt
+18745529 lrwxrwxrwx 1 gic-thy-rathanak gic-thy-rathanak  9 Nov 16 09:01 maple-soft.txt -> maple.txt
+hard: version 803
+stored target: maple.txt
+soft: cat: maple-soft.txt: No such file or directory
+
+=== AFTER REPAIR ===
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple-backup.txt
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple-hard.txt
+18745529 lrwxrwxrwx 1 gic-thy-rathanak gic-thy-rathanak 16 Nov 16 09:03 maple-soft.txt -> maple-backup.txt
+stored target: maple-backup.txt
+hard: version 803
+soft: version 803
+Decision: I used a relative target because it works within the folder. If I used an absolute path and moved the whole folder, the stored path could become invalid.

@@ -1,0 +1,9 @@
+
+=== NEW FILE USING THE OLD NAME ===
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple-backup.txt
+18745528 -rw-rw-r-- 2 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:00 maple-hard.txt
+18745529 lrwxrwxrwx 1 gic-thy-rathanak gic-thy-rathanak  9 Nov 16 09:01 maple-soft.txt -> maple.txt
+18745530 -rw-rw-r-- 1 gic-thy-rathanak gic-thy-rathanak 12 Nov 16 09:03 maple.txt
+maple.txt: version 863
+hard: version 803
+soft: version 863
